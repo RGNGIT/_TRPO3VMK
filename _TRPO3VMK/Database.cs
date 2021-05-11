@@ -18,6 +18,17 @@ namespace _TRPO3VMK
         public static List<string> VSpecialize = new List<string>();
         // Откуда поступил
         public static List<string> From = new List<string>();
+        // Больной
+        public static List<string> FIO = new List<string>();
+        public static List<string> Pol = new List<string>();
+        public static List<string> NomerPolisa = new List<string>();
+        public static List<string> DataBirth = new List<string>();
+        public static List<string> Diagnoz = new List<string>();
+        public static List<string> BolFrom = new List<string>();
+        public static List<string> DataReg = new List<string>();
+        public static List<string> Bolnitsa = new List<string>();
+        public static List<string> DataVipiski = new List<string>();
+        public static List<string> PrichinaVipiski = new List<string>();
     }
 
 }
