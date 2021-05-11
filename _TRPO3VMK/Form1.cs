@@ -17,6 +17,7 @@ namespace _TRPO3VMK
         {
             InitializeComponent();
             chart1.Series.Clear();
+            chart2.Series.Clear();
             dataGridView2.Columns.Add("_BolFIO", "ФИО");
             dataGridView2.Columns.Add("_BolPol", "Пол");
             dataGridView2.Columns.Add("_BolPolis", "Номер полиса");
@@ -118,6 +119,45 @@ namespace _TRPO3VMK
             }
         }
 
+        List<string> Prichini()
+        {
+            List<string> Temp = new List<string>();
+            foreach (string i in Database.PrichinaVipiski)
+            {
+                if (!Temp.Contains(i))
+                {
+                    Temp.Add(i);
+                }
+            }
+            return Temp;
+        }
+
+        int[] FindMajorityReasons()
+        {
+            int[] PrichAmount = new int[Prichini().Count];
+            for (int i = 0; i < Prichini().Count; i++)
+            {
+                foreach (string j in Database.PrichinaVipiski)
+                {
+                    if (j == Prichini()[i])
+                    {
+                        PrichAmount[i]++;
+                    }
+                }
+            }
+            return PrichAmount;
+        }
+
+        void Grafik2Update()
+        {
+            chart2.Series.Clear();
+            chart2.Series.Add(new Series("Data2")
+            {
+                ChartType = SeriesChartType.Pie
+            });
+            chart2.Series["Data2"].Points.DataBindXY(Prichini(), FindMajorityReasons());
+        }
+
         void Grafik1Update()
         {
             string[] Names = new string[2] { "Поступившие", "Выписанные" };
@@ -158,7 +198,12 @@ namespace _TRPO3VMK
                 checkBoxKicked.Checked ? dateTimePickerExpDate.Value.ToString() : "На месте",
                 checkBoxKicked.Checked ? textBoxMainReason.Text : "На месте");
             OnPlace.Add(checkBoxKicked.Checked);
+            if (checkBoxKicked.Checked)
+            {
+                Database.PrichinaVipiski.Add(textBoxMainReason.Text);
+            }
             Grafik1Update();
+            Grafik2Update();
         }
     }
 }
