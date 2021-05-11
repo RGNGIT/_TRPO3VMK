@@ -25,6 +25,7 @@ namespace _TRPO3VMK
         public static List<string> DataBirth = new List<string>();
         public static List<string> Diagnoz = new List<string>();
         public static List<string> BolFrom = new List<string>();
+        public static List<string> BolVrach = new List<string>();
         public static List<string> DataReg = new List<string>();
         public static List<string> Bolnitsa = new List<string>();
         public static List<string> DataVipiski = new List<string>();

@@ -29,8 +29,39 @@ namespace _TRPO3VMK
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonAddMain = new System.Windows.Forms.Button();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerReg = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBoxVrach = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBoxFrom = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxMainDiag = new System.Windows.Forms.TextBox();
+            this.dateTimePickerMainBirth = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxMainPolis = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxMainPol = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxMainFio = new System.Windows.Forms.TextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.checkBoxKicked = new System.Windows.Forms.CheckBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxMainReason = new System.Windows.Forms.TextBox();
+            this.dateTimePickerExpDate = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBoxBolnitsa = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonAddDir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,20 +83,26 @@ namespace _TRPO3VMK
             this.textBoxFromAdd = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlAddDir.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -82,6 +119,7 @@ namespace _TRPO3VMK
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonAddMain);
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -91,6 +129,269 @@ namespace _TRPO3VMK
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Учет больных";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddMain
+            // 
+            this.buttonAddMain.Location = new System.Drawing.Point(495, 371);
+            this.buttonAddMain.Name = "buttonAddMain";
+            this.buttonAddMain.Size = new System.Drawing.Size(268, 23);
+            this.buttonAddMain.TabIndex = 4;
+            this.buttonAddMain.Text = "Добавить";
+            this.buttonAddMain.UseVisualStyleBackColor = true;
+            this.buttonAddMain.Click += new System.EventHandler(this.buttonAddMain_Click);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Location = new System.Drawing.Point(495, 6);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(267, 359);
+            this.tabControl2.TabIndex = 3;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dateTimePickerReg);
+            this.tabPage8.Controls.Add(this.label14);
+            this.tabPage8.Controls.Add(this.comboBoxVrach);
+            this.tabPage8.Controls.Add(this.label13);
+            this.tabPage8.Controls.Add(this.comboBoxFrom);
+            this.tabPage8.Controls.Add(this.label12);
+            this.tabPage8.Controls.Add(this.label11);
+            this.tabPage8.Controls.Add(this.textBoxMainDiag);
+            this.tabPage8.Controls.Add(this.dateTimePickerMainBirth);
+            this.tabPage8.Controls.Add(this.label10);
+            this.tabPage8.Controls.Add(this.label9);
+            this.tabPage8.Controls.Add(this.textBoxMainPolis);
+            this.tabPage8.Controls.Add(this.label8);
+            this.tabPage8.Controls.Add(this.textBoxMainPol);
+            this.tabPage8.Controls.Add(this.label7);
+            this.tabPage8.Controls.Add(this.textBoxMainFio);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(259, 333);
+            this.tabPage8.TabIndex = 0;
+            this.tabPage8.Text = "Инфо 1";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerReg
+            // 
+            this.dateTimePickerReg.Location = new System.Drawing.Point(6, 294);
+            this.dateTimePickerReg.Name = "dateTimePickerReg";
+            this.dateTimePickerReg.Size = new System.Drawing.Size(247, 20);
+            this.dateTimePickerReg.TabIndex = 20;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 278);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 13);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Дата регистрации";
+            // 
+            // comboBoxVrach
+            // 
+            this.comboBoxVrach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVrach.FormattingEnabled = true;
+            this.comboBoxVrach.Location = new System.Drawing.Point(6, 254);
+            this.comboBoxVrach.Name = "comboBoxVrach";
+            this.comboBoxVrach.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxVrach.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 238);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Врач";
+            // 
+            // comboBoxFrom
+            // 
+            this.comboBoxFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFrom.FormattingEnabled = true;
+            this.comboBoxFrom.Location = new System.Drawing.Point(6, 214);
+            this.comboBoxFrom.Name = "comboBoxFrom";
+            this.comboBoxFrom.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxFrom.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 198);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Откуда";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 159);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Диагноз";
+            // 
+            // textBoxMainDiag
+            // 
+            this.textBoxMainDiag.Location = new System.Drawing.Point(6, 175);
+            this.textBoxMainDiag.Name = "textBoxMainDiag";
+            this.textBoxMainDiag.Size = new System.Drawing.Size(247, 20);
+            this.textBoxMainDiag.TabIndex = 11;
+            // 
+            // dateTimePickerMainBirth
+            // 
+            this.dateTimePickerMainBirth.Location = new System.Drawing.Point(6, 136);
+            this.dateTimePickerMainBirth.Name = "dateTimePickerMainBirth";
+            this.dateTimePickerMainBirth.Size = new System.Drawing.Size(247, 20);
+            this.dateTimePickerMainBirth.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 120);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Дата рождения";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Номер полиса";
+            // 
+            // textBoxMainPolis
+            // 
+            this.textBoxMainPolis.Location = new System.Drawing.Point(6, 97);
+            this.textBoxMainPolis.Name = "textBoxMainPolis";
+            this.textBoxMainPolis.Size = new System.Drawing.Size(247, 20);
+            this.textBoxMainPolis.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(27, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Пол";
+            // 
+            // textBoxMainPol
+            // 
+            this.textBoxMainPol.Location = new System.Drawing.Point(6, 58);
+            this.textBoxMainPol.Name = "textBoxMainPol";
+            this.textBoxMainPol.Size = new System.Drawing.Size(247, 20);
+            this.textBoxMainPol.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "ФИО";
+            // 
+            // textBoxMainFio
+            // 
+            this.textBoxMainFio.Location = new System.Drawing.Point(6, 19);
+            this.textBoxMainFio.Name = "textBoxMainFio";
+            this.textBoxMainFio.Size = new System.Drawing.Size(247, 20);
+            this.textBoxMainFio.TabIndex = 2;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.checkBoxKicked);
+            this.tabPage9.Controls.Add(this.label17);
+            this.tabPage9.Controls.Add(this.textBoxMainReason);
+            this.tabPage9.Controls.Add(this.dateTimePickerExpDate);
+            this.tabPage9.Controls.Add(this.label16);
+            this.tabPage9.Controls.Add(this.comboBoxBolnitsa);
+            this.tabPage9.Controls.Add(this.label15);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(259, 333);
+            this.tabPage9.TabIndex = 1;
+            this.tabPage9.Text = "Инфо 2";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxKicked
+            // 
+            this.checkBoxKicked.AutoSize = true;
+            this.checkBoxKicked.Location = new System.Drawing.Point(7, 86);
+            this.checkBoxKicked.Name = "checkBoxKicked";
+            this.checkBoxKicked.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxKicked.TabIndex = 24;
+            this.checkBoxKicked.Text = "Выписан";
+            this.checkBoxKicked.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 106);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 13);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Причина выписки";
+            // 
+            // textBoxMainReason
+            // 
+            this.textBoxMainReason.Location = new System.Drawing.Point(6, 122);
+            this.textBoxMainReason.Name = "textBoxMainReason";
+            this.textBoxMainReason.Size = new System.Drawing.Size(247, 20);
+            this.textBoxMainReason.TabIndex = 22;
+            // 
+            // dateTimePickerExpDate
+            // 
+            this.dateTimePickerExpDate.Location = new System.Drawing.Point(6, 59);
+            this.dateTimePickerExpDate.Name = "dateTimePickerExpDate";
+            this.dateTimePickerExpDate.Size = new System.Drawing.Size(247, 20);
+            this.dateTimePickerExpDate.TabIndex = 21;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 43);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(80, 13);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Дата выписки";
+            // 
+            // comboBoxBolnitsa
+            // 
+            this.comboBoxBolnitsa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBolnitsa.FormattingEnabled = true;
+            this.comboBoxBolnitsa.Location = new System.Drawing.Point(6, 19);
+            this.comboBoxBolnitsa.Name = "comboBoxBolnitsa";
+            this.comboBoxBolnitsa.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxBolnitsa.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Больница";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(483, 388);
+            this.dataGridView2.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -275,6 +576,7 @@ namespace _TRPO3VMK
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tabControl3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -293,43 +595,52 @@ namespace _TRPO3VMK
             this.tabPage4.Text = "Помощь";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // tabControl3
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(483, 388);
-            this.dataGridView2.TabIndex = 2;
+            this.tabControl3.Controls.Add(this.tabPage10);
+            this.tabControl3.Controls.Add(this.tabPage11);
+            this.tabControl3.Location = new System.Drawing.Point(6, 6);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(756, 388);
+            this.tabControl3.TabIndex = 0;
             // 
-            // tabControl2
+            // tabPage10
             // 
-            this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Location = new System.Drawing.Point(495, 6);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(267, 388);
-            this.tabControl2.TabIndex = 3;
+            this.tabPage10.Controls.Add(this.chart1);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(748, 362);
+            this.tabPage10.TabIndex = 0;
+            this.tabPage10.Text = "Количество поступивших и выписанных больных ";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // tabPage8
+            // tabPage11
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(259, 362);
-            this.tabPage8.TabIndex = 0;
-            this.tabPage8.Text = "Инфо 1";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(748, 362);
+            this.tabPage11.TabIndex = 1;
+            this.tabPage11.Text = "Количественные данные по причинам выписки";
+            this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // tabPage9
+            // chart1
             // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(259, 362);
-            this.tabPage9.TabIndex = 1;
-            this.tabPage9.Text = "Инфо 2";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(6, 6);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(736, 350);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
@@ -337,10 +648,17 @@ namespace _TRPO3VMK
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControlAddDir.ResumeLayout(false);
@@ -350,8 +668,10 @@ namespace _TRPO3VMK
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,6 +705,34 @@ namespace _TRPO3VMK
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button buttonAddMain;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxMainFio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerMainBirth;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxMainPolis;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxMainPol;
+        private System.Windows.Forms.ComboBox comboBoxFrom;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxMainDiag;
+        private System.Windows.Forms.ComboBox comboBoxVrach;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dateTimePickerReg;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBoxBolnitsa;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxMainReason;
+        private System.Windows.Forms.DateTimePicker dateTimePickerExpDate;
+        private System.Windows.Forms.CheckBox checkBoxKicked;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

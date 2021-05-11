@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace _TRPO3VMK
 {
@@ -15,12 +16,14 @@ namespace _TRPO3VMK
         public Form1()
         {
             InitializeComponent();
+            chart1.Series.Clear();
             dataGridView2.Columns.Add("_BolFIO", "ФИО");
             dataGridView2.Columns.Add("_BolPol", "Пол");
             dataGridView2.Columns.Add("_BolPolis", "Номер полиса");
             dataGridView2.Columns.Add("_BolDate", "Дата рождения");
             dataGridView2.Columns.Add("_BolDiag", "Диагноз");
             dataGridView2.Columns.Add("_BolFrom", "Откуда нахуй");
+            dataGridView2.Columns.Add("_BolVrach", "Врач");
             dataGridView2.Columns.Add("_BolDateReg", "Дата регистрации");
             dataGridView2.Columns.Add("_BolBolnitsa", "Больница");
             dataGridView2.Columns.Add("_BolDataVip", "Дата выписки");
@@ -59,7 +62,6 @@ namespace _TRPO3VMK
                     break;
                 case 2:
                     dataGridView1.Columns.Add("_From", "Откуда");
-                    dataGridView1.Columns.Add("_VSpecialize", "Специализация");
                     for (int i = 0; i < Database.From.Count; i++)
                     {
                         dataGridView1.Rows.Add(
@@ -87,6 +89,7 @@ namespace _TRPO3VMK
                     break;
             }
             TablSpravUpdate(tabControlAddDir.SelectedIndex);
+            ComboUpdates();
         }
 
         private void tabControlAddDir_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,8 +101,64 @@ namespace _TRPO3VMK
 
         void ComboUpdates()
         {
-
+            comboBoxFrom.Items.Clear();
+            comboBoxVrach.Items.Clear();
+            comboBoxBolnitsa.Items.Clear();
+            foreach(string i in Database.From)
+            {
+                comboBoxFrom.Items.Add(i);
+            }
+            foreach (string i in Database.VFIO)
+            {
+                comboBoxVrach.Items.Add(i);
+            }
+            foreach(string i in Database.BName)
+            {
+                comboBoxBolnitsa.Items.Add(i);
+            }
         }
 
+        void Grafik1Update()
+        {
+            string[] Names = new string[2] { "Поступившие", "Выписанные" };
+            chart1.Series.Clear();
+            int[] Values = new int[2] { 0, 0 };
+            foreach(bool i in OnPlace)
+            {
+                if(i)
+                {
+                    Values[1]++;
+                } 
+                else
+                {
+                    Values[0]++;
+                }
+            }
+            chart1.Series.Add(new Series("Data1") 
+            {
+                ChartType = SeriesChartType.Pie
+            });
+            chart1.Series["Data1"].Points.DataBindXY(Names, Values);
+        }
+
+        List<bool> OnPlace = new List<bool>();
+
+        private void buttonAddMain_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Add(
+                textBoxMainFio.Text,
+                textBoxMainPol.Text,
+                textBoxMainPolis.Text,
+                dateTimePickerMainBirth.Value.ToString(),
+                textBoxMainDiag.Text,
+                comboBoxFrom.SelectedItem.ToString(),
+                comboBoxVrach.SelectedItem.ToString(),
+                dateTimePickerReg.Value.ToString(),
+                comboBoxBolnitsa.SelectedItem.ToString(),
+                checkBoxKicked.Checked ? dateTimePickerExpDate.Value.ToString() : "На месте",
+                checkBoxKicked.Checked ? textBoxMainReason.Text : "На месте");
+            OnPlace.Add(checkBoxKicked.Checked);
+            Grafik1Update();
+        }
     }
 }
