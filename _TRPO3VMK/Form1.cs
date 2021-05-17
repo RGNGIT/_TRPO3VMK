@@ -23,7 +23,7 @@ namespace _TRPO3VMK
             dataGridView2.Columns.Add("_BolPolis", "Номер полиса");
             dataGridView2.Columns.Add("_BolDate", "Дата рождения");
             dataGridView2.Columns.Add("_BolDiag", "Диагноз");
-            dataGridView2.Columns.Add("_BolFrom", "Откуда нахуй");
+            dataGridView2.Columns.Add("_BolFrom", "Откуда");
             dataGridView2.Columns.Add("_BolVrach", "Врач");
             dataGridView2.Columns.Add("_BolDateReg", "Дата регистрации");
             dataGridView2.Columns.Add("_BolBolnitsa", "Больница");
@@ -69,6 +69,30 @@ namespace _TRPO3VMK
                             Database.From[i]);
                     }
                     break;
+                case 3:
+                    dataGridView1.Columns.Add("_Sex", "Пол");
+                    for (int i = 0; i < Database.Sex.Count; i++)
+                    {
+                        dataGridView1.Rows.Add(
+                            Database.Sex[i]);
+                    }
+                    break;
+                case 4:
+                    dataGridView1.Columns.Add("_Diag", "Диагноз");
+                    for (int i = 0; i < Database.Diag.Count; i++)
+                    {
+                        dataGridView1.Rows.Add(
+                            Database.Diag[i]);
+                    }
+                    break;
+                case 5:
+                    dataGridView1.Columns.Add("_Reason", "Причина");
+                    for (int i = 0; i < Database.Reason.Count; i++)
+                    {
+                        dataGridView1.Rows.Add(
+                            Database.Reason[i]);
+                    }
+                    break;
             }
         }
 
@@ -88,6 +112,15 @@ namespace _TRPO3VMK
                 case 2:
                     Database.From.Add(textBoxFromAdd.Text);
                     break;
+                case 3:
+                    Database.Sex.Add(textBoxDirSex.Text);
+                    break;
+                case 4:
+                    Database.Diag.Add(textBoxDirDiag.Text);
+                    break;
+                case 5:
+                    Database.Reason.Add(textBoxDirReason.Text);
+                    break;
             }
             TablSpravUpdate(tabControlAddDir.SelectedIndex);
             ComboUpdates();
@@ -105,6 +138,9 @@ namespace _TRPO3VMK
             comboBoxFrom.Items.Clear();
             comboBoxVrach.Items.Clear();
             comboBoxBolnitsa.Items.Clear();
+            comboBoxSex.Items.Clear();
+            comboBoxDiag.Items.Clear();
+            comboBoxReason.Items.Clear();
             foreach(string i in Database.From)
             {
                 comboBoxFrom.Items.Add(i);
@@ -116,6 +152,18 @@ namespace _TRPO3VMK
             foreach(string i in Database.BName)
             {
                 comboBoxBolnitsa.Items.Add(i);
+            }
+            foreach (string i in Database.Sex)
+            {
+                comboBoxSex.Items.Add(i);
+            }
+            foreach (string i in Database.Diag)
+            {
+                comboBoxDiag.Items.Add(i);
+            }
+            foreach (string i in Database.Reason)
+            {
+                comboBoxReason.Items.Add(i);
             }
         }
 
@@ -187,20 +235,20 @@ namespace _TRPO3VMK
         {
             dataGridView2.Rows.Add(
                 textBoxMainFio.Text,
-                textBoxMainPol.Text,
+                comboBoxSex.SelectedItem.ToString(),
                 textBoxMainPolis.Text,
                 dateTimePickerMainBirth.Value.ToString(),
-                textBoxMainDiag.Text,
+                comboBoxDiag.SelectedItem.ToString(),
                 comboBoxFrom.SelectedItem.ToString(),
                 comboBoxVrach.SelectedItem.ToString(),
                 dateTimePickerReg.Value.ToString(),
                 comboBoxBolnitsa.SelectedItem.ToString(),
                 checkBoxKicked.Checked ? dateTimePickerExpDate.Value.ToString() : "На месте",
-                checkBoxKicked.Checked ? textBoxMainReason.Text : "На месте");
+                checkBoxKicked.Checked ? comboBoxReason.SelectedItem.ToString() : "На месте");
             OnPlace.Add(checkBoxKicked.Checked);
             if (checkBoxKicked.Checked)
             {
-                Database.PrichinaVipiski.Add(textBoxMainReason.Text);
+                Database.PrichinaVipiski.Add(comboBoxReason.SelectedItem.ToString());
             }
             Grafik1Update();
             Grafik2Update();

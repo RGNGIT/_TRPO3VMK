@@ -29,9 +29,9 @@ namespace _TRPO3VMK
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -47,19 +47,16 @@ namespace _TRPO3VMK
             this.comboBoxFrom = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxMainDiag = new System.Windows.Forms.TextBox();
             this.dateTimePickerMainBirth = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxMainPolis = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxMainPol = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxMainFio = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.checkBoxKicked = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxMainReason = new System.Windows.Forms.TextBox();
             this.dateTimePickerExpDate = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBoxBolnitsa = new System.Windows.Forms.ComboBox();
@@ -85,12 +82,24 @@ namespace _TRPO3VMK
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxFromAdd = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxDirSex = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxDirDiag = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxDirReason = new System.Windows.Forms.TextBox();
+            this.comboBoxReason = new System.Windows.Forms.ComboBox();
+            this.comboBoxSex = new System.Windows.Forms.ComboBox();
+            this.comboBoxDiag = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -106,9 +115,12 @@ namespace _TRPO3VMK
             this.tabPage3.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.tabPage12.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -158,6 +170,8 @@ namespace _TRPO3VMK
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.comboBoxDiag);
+            this.tabPage8.Controls.Add(this.comboBoxSex);
             this.tabPage8.Controls.Add(this.dateTimePickerReg);
             this.tabPage8.Controls.Add(this.label14);
             this.tabPage8.Controls.Add(this.comboBoxVrach);
@@ -165,13 +179,11 @@ namespace _TRPO3VMK
             this.tabPage8.Controls.Add(this.comboBoxFrom);
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.label11);
-            this.tabPage8.Controls.Add(this.textBoxMainDiag);
             this.tabPage8.Controls.Add(this.dateTimePickerMainBirth);
             this.tabPage8.Controls.Add(this.label10);
             this.tabPage8.Controls.Add(this.label9);
             this.tabPage8.Controls.Add(this.textBoxMainPolis);
             this.tabPage8.Controls.Add(this.label8);
-            this.tabPage8.Controls.Add(this.textBoxMainPol);
             this.tabPage8.Controls.Add(this.label7);
             this.tabPage8.Controls.Add(this.textBoxMainFio);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
@@ -243,13 +255,6 @@ namespace _TRPO3VMK
             this.label11.TabIndex = 12;
             this.label11.Text = "Диагноз";
             // 
-            // textBoxMainDiag
-            // 
-            this.textBoxMainDiag.Location = new System.Drawing.Point(6, 175);
-            this.textBoxMainDiag.Name = "textBoxMainDiag";
-            this.textBoxMainDiag.Size = new System.Drawing.Size(247, 20);
-            this.textBoxMainDiag.TabIndex = 11;
-            // 
             // dateTimePickerMainBirth
             // 
             this.dateTimePickerMainBirth.Location = new System.Drawing.Point(6, 136);
@@ -291,13 +296,6 @@ namespace _TRPO3VMK
             this.label8.TabIndex = 5;
             this.label8.Text = "Пол";
             // 
-            // textBoxMainPol
-            // 
-            this.textBoxMainPol.Location = new System.Drawing.Point(6, 58);
-            this.textBoxMainPol.Name = "textBoxMainPol";
-            this.textBoxMainPol.Size = new System.Drawing.Size(247, 20);
-            this.textBoxMainPol.TabIndex = 4;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -316,9 +314,9 @@ namespace _TRPO3VMK
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.comboBoxReason);
             this.tabPage9.Controls.Add(this.checkBoxKicked);
             this.tabPage9.Controls.Add(this.label17);
-            this.tabPage9.Controls.Add(this.textBoxMainReason);
             this.tabPage9.Controls.Add(this.dateTimePickerExpDate);
             this.tabPage9.Controls.Add(this.label16);
             this.tabPage9.Controls.Add(this.comboBoxBolnitsa);
@@ -349,13 +347,6 @@ namespace _TRPO3VMK
             this.label17.Size = new System.Drawing.Size(97, 13);
             this.label17.TabIndex = 23;
             this.label17.Text = "Причина выписки";
-            // 
-            // textBoxMainReason
-            // 
-            this.textBoxMainReason.Location = new System.Drawing.Point(6, 122);
-            this.textBoxMainReason.Name = "textBoxMainReason";
-            this.textBoxMainReason.Size = new System.Drawing.Size(247, 20);
-            this.textBoxMainReason.TabIndex = 22;
             // 
             // dateTimePickerExpDate
             // 
@@ -435,6 +426,9 @@ namespace _TRPO3VMK
             this.tabControlAddDir.Controls.Add(this.tabPage5);
             this.tabControlAddDir.Controls.Add(this.tabPage6);
             this.tabControlAddDir.Controls.Add(this.tabPage7);
+            this.tabControlAddDir.Controls.Add(this.tabPage12);
+            this.tabControlAddDir.Controls.Add(this.tabPage13);
+            this.tabControlAddDir.Controls.Add(this.tabPage14);
             this.tabControlAddDir.Location = new System.Drawing.Point(7, 6);
             this.tabControlAddDir.Name = "tabControlAddDir";
             this.tabControlAddDir.SelectedIndex = 0;
@@ -591,16 +585,6 @@ namespace _TRPO3VMK
             this.tabPage3.Text = "Отчеты";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(768, 400);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Помощь";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.tabPage10);
@@ -622,6 +606,22 @@ namespace _TRPO3VMK
             this.tabPage10.Text = "Количество поступивших и выписанных больных ";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(6, 6);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(736, 350);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.chart2);
@@ -632,22 +632,6 @@ namespace _TRPO3VMK
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Количественные данные по причинам выписки";
             this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // chart1
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(6, 6);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(736, 350);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // chart2
             // 
@@ -664,6 +648,127 @@ namespace _TRPO3VMK
             this.chart2.Size = new System.Drawing.Size(736, 350);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(768, 400);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Помощь";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.label18);
+            this.tabPage12.Controls.Add(this.textBoxDirSex);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(259, 333);
+            this.tabPage12.TabIndex = 3;
+            this.tabPage12.Text = "Пол";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.label19);
+            this.tabPage13.Controls.Add(this.textBoxDirDiag);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(259, 333);
+            this.tabPage13.TabIndex = 4;
+            this.tabPage13.Text = "Диагноз";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.label20);
+            this.tabPage14.Controls.Add(this.textBoxDirReason);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(259, 333);
+            this.tabPage14.TabIndex = 5;
+            this.tabPage14.Text = "Причина выписки";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(27, 13);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Пол";
+            // 
+            // textBoxDirSex
+            // 
+            this.textBoxDirSex.Location = new System.Drawing.Point(6, 19);
+            this.textBoxDirSex.Name = "textBoxDirSex";
+            this.textBoxDirSex.Size = new System.Drawing.Size(247, 20);
+            this.textBoxDirSex.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(51, 13);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Диагноз";
+            // 
+            // textBoxDirDiag
+            // 
+            this.textBoxDirDiag.Location = new System.Drawing.Point(6, 19);
+            this.textBoxDirDiag.Name = "textBoxDirDiag";
+            this.textBoxDirDiag.Size = new System.Drawing.Size(247, 20);
+            this.textBoxDirDiag.TabIndex = 4;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Причина";
+            // 
+            // textBoxDirReason
+            // 
+            this.textBoxDirReason.Location = new System.Drawing.Point(6, 19);
+            this.textBoxDirReason.Name = "textBoxDirReason";
+            this.textBoxDirReason.Size = new System.Drawing.Size(247, 20);
+            this.textBoxDirReason.TabIndex = 4;
+            // 
+            // comboBoxReason
+            // 
+            this.comboBoxReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxReason.FormattingEnabled = true;
+            this.comboBoxReason.Location = new System.Drawing.Point(6, 122);
+            this.comboBoxReason.Name = "comboBoxReason";
+            this.comboBoxReason.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxReason.TabIndex = 25;
+            // 
+            // comboBoxSex
+            // 
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Location = new System.Drawing.Point(6, 58);
+            this.comboBoxSex.Name = "comboBoxSex";
+            this.comboBoxSex.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxSex.TabIndex = 21;
+            // 
+            // comboBoxDiag
+            // 
+            this.comboBoxDiag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDiag.FormattingEnabled = true;
+            this.comboBoxDiag.Location = new System.Drawing.Point(6, 175);
+            this.comboBoxDiag.Name = "comboBoxDiag";
+            this.comboBoxDiag.Size = new System.Drawing.Size(247, 21);
+            this.comboBoxDiag.TabIndex = 22;
             // 
             // Form1
             // 
@@ -694,9 +799,15 @@ namespace _TRPO3VMK
             this.tabPage3.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
-            this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -738,11 +849,9 @@ namespace _TRPO3VMK
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxMainPolis;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxMainPol;
         private System.Windows.Forms.ComboBox comboBoxFrom;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxMainDiag;
         private System.Windows.Forms.ComboBox comboBoxVrach;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -751,7 +860,6 @@ namespace _TRPO3VMK
         private System.Windows.Forms.ComboBox comboBoxBolnitsa;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxMainReason;
         private System.Windows.Forms.DateTimePicker dateTimePickerExpDate;
         private System.Windows.Forms.CheckBox checkBoxKicked;
         private System.Windows.Forms.TabControl tabControl3;
@@ -759,6 +867,18 @@ namespace _TRPO3VMK
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxDirSex;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBoxDirDiag;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBoxDirReason;
+        private System.Windows.Forms.ComboBox comboBoxDiag;
+        private System.Windows.Forms.ComboBox comboBoxSex;
+        private System.Windows.Forms.ComboBox comboBoxReason;
     }
 }
 
