@@ -25,6 +25,7 @@ namespace _TRPO3VMK
             dataGridView2.Columns.Add("_BolDiag", "Диагноз");
             dataGridView2.Columns.Add("_BolFrom", "Откуда");
             dataGridView2.Columns.Add("_BolVrach", "Врач");
+            dataGridView2.Columns.Add("_BolSpec", "Специализация");
             dataGridView2.Columns.Add("_BolDateReg", "Дата регистрации");
             dataGridView2.Columns.Add("_BolBolnitsa", "Больница");
             dataGridView2.Columns.Add("_BolDataVip", "Дата выписки");
@@ -93,6 +94,14 @@ namespace _TRPO3VMK
                             Database.Reason[i]);
                     }
                     break;
+                case 6:
+                    dataGridView1.Columns.Add("_Spec", "Специализация");
+                    for (int i = 0; i < Database.VSpecializeList.Count; i++)
+                    {
+                        dataGridView1.Rows.Add(
+                            Database.VSpecializeList[i]);
+                    }
+                    break;
             }
         }
 
@@ -107,7 +116,7 @@ namespace _TRPO3VMK
                     break;
                 case 1:
                     Database.VFIO.Add(textBoxVFIO.Text);
-                    Database.VSpecialize.Add(textBoxVSpecialize.Text);
+                    Database.VSpecialize.Add(comboBoxDirSpec.SelectedItem.ToString());
                     break;
                 case 2:
                     Database.From.Add(textBoxFromAdd.Text);
@@ -120,6 +129,9 @@ namespace _TRPO3VMK
                     break;
                 case 5:
                     Database.Reason.Add(textBoxDirReason.Text);
+                    break;
+                case 6:
+                    Database.VSpecializeList.Add(textBoxDirSpecAdd.Text);
                     break;
             }
             TablSpravUpdate(tabControlAddDir.SelectedIndex);
@@ -141,6 +153,7 @@ namespace _TRPO3VMK
             comboBoxSex.Items.Clear();
             comboBoxDiag.Items.Clear();
             comboBoxReason.Items.Clear();
+            comboBoxDirSpec.Items.Clear();
             foreach(string i in Database.From)
             {
                 comboBoxFrom.Items.Add(i);
@@ -164,6 +177,10 @@ namespace _TRPO3VMK
             foreach (string i in Database.Reason)
             {
                 comboBoxReason.Items.Add(i);
+            }
+            foreach (string i in Database.VSpecializeList)
+            {
+                comboBoxDirSpec.Items.Add(i);
             }
         }
 
@@ -241,6 +258,7 @@ namespace _TRPO3VMK
                 comboBoxDiag.SelectedItem.ToString(),
                 comboBoxFrom.SelectedItem.ToString(),
                 comboBoxVrach.SelectedItem.ToString(),
+                Database.VSpecialize[comboBoxVrach.SelectedIndex],
                 dateTimePickerReg.Value.ToString(),
                 comboBoxBolnitsa.SelectedItem.ToString(),
                 checkBoxKicked.Checked ? dateTimePickerExpDate.Value.ToString() : "На месте",

@@ -16,6 +16,8 @@ namespace _TRPO3VMK
         // Врач
         public static List<string> VFIO = new List<string>();
         public static List<string> VSpecialize = new List<string>();
+        // Специализация
+        public static List<string> VSpecializeList = new List<string>();
         // Откуда поступил
         public static List<string> From = new List<string>();
         // Пол
