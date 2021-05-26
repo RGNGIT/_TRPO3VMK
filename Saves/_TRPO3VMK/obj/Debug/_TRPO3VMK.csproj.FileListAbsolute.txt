@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\bin\Debug\_TRPO3VMK.exe.config
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\bin\Debug\_TRPO3VMK.exe
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\bin\Debug\_TRPO3VMK.pdb
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.csprojAssemblyReference.cache
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.Form1.resources
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.Properties.Resources.resources
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.csproj.GenerateResource.cache
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.exe
+C:\Users\user\Desktop\_TRPO3VMK-master\_TRPO3VMK\obj\Debug\_TRPO3VMK.pdb
